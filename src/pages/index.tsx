@@ -5,6 +5,7 @@ const Index = () => {
   return (
     <div className="relative w-full h-full">
       <Nav />
+      
     </div>
   );
 };
