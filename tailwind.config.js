@@ -10,7 +10,6 @@ module.exports = {
       sans: ['Prompt', ...defaultTheme.fontFamily.sans],
       display: [
         'Prompt',
-        'Noto Sans Thai',
         ...defaultTheme.fontFamily.sans,
       ],
     },

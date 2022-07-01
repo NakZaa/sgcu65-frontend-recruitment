@@ -8,40 +8,40 @@ export const Form = () => {
       <form>
         <div className="pb-2 space-y-9">
           <input
-            className="w-full px-3 py-2 leading-tight text-gray-200 border rounded shadow appearance-none focus:border-pink-500 "
+            className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500 "
             type="text"
             placeholder="ชื่อ"
             id="Firstname"
           />
           <input
-            className="w-full px-3 py-2 leading-tight text-gray-200 border rounded shadow appearance-none focus:border-pink-500 "
+            className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500 "
             type="text"
             placeholder="นามสกุล"
             id="Lastname"
           />
 
           <input
-            className="w-full px-3 py-2 leading-tight text-gray-200 border rounded shadow appearance-none focus:border-pink-500 "
+            className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500 "
             type="text"
             placeholder="ชื่อผู้ใช้"
             id="Username"
           />
 
           <input
-            className="w-full px-3 py-2 leading-tight text-gray-200 border rounded shadow appearance-none focus:border-pink-500 "
+            className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500 "
             type="email"
             placeholder="อีเมล"
             id="email"
           />
   
           <input
-            className="w-full px-3 py-2 leading-tight text-gray-200 border rounded shadow appearance-none focus:border-pink-500 "
+            className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500 "
             type="password"
             placeholder="รหัสผ่าน"
             id="Password"
           />
           <input
-            className="w-full px-3 py-2 leading-tight text-gray-200 border rounded shadow appearance-none focus:border-pink-500"
+            className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500"
             type="password"
             placeholder="ยืนยันรหัสผ่าน"
             id="ConfirmPassword"
