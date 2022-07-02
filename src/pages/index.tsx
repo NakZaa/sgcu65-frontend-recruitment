@@ -7,9 +7,9 @@ import { Contact } from "components/Contact";
 
 const Index = () => {
   return (
-    <div className="relative flex flex-col w-full h-screen ">
+    <div className="relative flex flex-col w-full min-h-screen ">
       <Nav />
-      <div className="flex flex-row justify-around w-full h-full pt-8 bg-center bg-no-repeat bg-cover md:pt-16 md:bg-desktop bg-mobile">
+      <div className="flex flex-row justify-around w-full pt-8bg-center bg-no-repeat bg-cover h-[calc(100vh-64px)] md:bg-isd-desktop bg-isd-mobile  md:pt-16">
         <div className="items-start hidden md:flex">
           <Image src="/kite.png" width={512} height={512} alt="kite" />
         </div>
