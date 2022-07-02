@@ -50,6 +50,7 @@ const Namelist = ({users,}: InferGetStaticPropsType<typeof getStaticProps>) => {
           <div className="flex flex-wrap justify-center w-full space-y-5 overflow-y-scroll max-w-7xl md:space-y-0 no-scrollbar">
             {filteredUsers.map((user: User) => (
               <Card
+                key={user.username}
                 username={user.username}
                 name={user.name}
                 surname={user.surname}
