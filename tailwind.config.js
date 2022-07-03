@@ -16,8 +16,6 @@ module.exports = {
     },
     extend: {
       backgroundImage: (theme) => ({
-        'mobile': "url('../components/bg-mobile.svg')",
-        'desktop': "url('../components/bg-desktop.svg')",
         'isd-desktop': `url("${svgToDataUri(
           `<svg
           width="1440"

@@ -15,8 +15,10 @@ const FormSchema = Yup.object().shape({
 });
 
 export const SgcuForm = () => {
+  const [status, setStatus] = React.useState("");
+
   return (
-    <div className="flex flex-col px-10 py-10 mb-4 space-y-5 bg-white border border-pink-500 rounded-lg md:px-14">
+    <div className="flex flex-col px-10 pt-10 pb-2 mb-4 space-y-5 bg-white border border-pink-500 rounded-lg md:px-14">
       <h3 className="text-5xl font-semibold">ลงทะเบียน</h3>
       <p className="pb-3 text-sm">กรุณากรอกข้อมูลให้ครบถ้วน</p>
       <Formik
@@ -29,7 +31,7 @@ export const SgcuForm = () => {
           confirmPassword: "",
         }}
         validationSchema={FormSchema}
-        onSubmit={async (values, { setSubmitting }) => {
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
           setSubmitting(false);
           const res = await fetch("http://isd-test.cucheck.in/users", {
             method: "POST",
@@ -38,8 +40,29 @@ export const SgcuForm = () => {
             },
             body: JSON.stringify(values),
           });
+
+          switch (res.status) {
+            case 201:
+              {
+                setStatus("สมัครสำเร็จ");
+                resetForm();
+              break;
+              }
+            case 400:
+              setStatus("ข้อมูลไม่ครบถ้วน");
+              break;
+            case 409:
+              setStatus("ชื่อผู้ใช้หรืออีเมลนี้มีผู้ใช้อยู่แล้ว");
+              break;
+            default:
+              setStatus("ข้อมูลไม่ถูกต้อง");
+              break;
+          }
+
+          console.log(res.status);
           const data = await res.json();
           console.log(data);
+ 
         }}
       >
         {({
@@ -137,6 +160,7 @@ export const SgcuForm = () => {
               ) : (
                 <div className="h-10" aria-hidden></div>
               )}
+              
               <button
                 className="w-full px-4 py-2 font-medium text-white bg-pink-500 rounded hover:bg-pink-700 focus:outline-none"
                 type="submit"
@@ -144,6 +168,7 @@ export const SgcuForm = () => {
               >
                 Submit
               </button>
+              {status ? (<p className="my-2 text-red-400">{status}</p>) : (<div className="h-8" aria-hidden></div>)}
             </div>
           </form>
         )}

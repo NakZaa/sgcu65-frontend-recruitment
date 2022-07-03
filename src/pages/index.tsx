@@ -9,7 +9,7 @@ const Index = () => {
     <div className="relative flex flex-col w-full min-h-screen ">
       <Nav />
       <div className="flex w-full bg-center bg-no-repeat bg-cover h-[calc(100vh-64px)] md:bg-isd-desktop bg-isd-mobile ">
-        <div className="flex flex-row justify-around w-full pt-8 overflow-y-scroll md:pt-12">
+        <div className="flex flex-row justify-around w-full pt-8 overflow-y-scroll md:pt-12 no-scrollbar">
           <div className="items-start hidden md:flex">
             <Image src="/kite.png" width={512} height={512} alt="kite" />
           </div>
