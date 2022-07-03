@@ -76,6 +76,34 @@ export const SgcuForm = () => {
         }) => (
           <form onSubmit={handleSubmit} className="w-full">
             <div className="w-full pb-2 md:w-80">
+            <input
+                className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500 "
+                type="text"
+                placeholder="ชื่อผู้ใช้"
+                name="username"
+                onChange={handleChange}
+                value={values.username}
+                onBlur={handleBlur}
+              />
+              {errors.username && touched.username ? (
+                <p className="my-2 text-red-400">{errors.username}</p>
+              ) : (
+                <div className="h-10" aria-hidden></div>
+              )}
+              <input
+                className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500 "
+                type="email"
+                placeholder="อีเมล"
+                name="email"
+                onChange={handleChange}
+                value={values.email}
+                onBlur={handleBlur}
+              />
+              {errors.email && touched.email ? (
+                <p className="my-2 text-red-400">{errors.email}</p>
+              ) : (
+                <div className="h-10" aria-hidden></div>
+              )}
               <input
                 className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500"
                 type="text"
@@ -101,34 +129,6 @@ export const SgcuForm = () => {
               />
               {errors.surname && touched.surname ? (
                 <p className="my-2 text-red-400">{errors.surname}</p>
-              ) : (
-                <div className="h-10" aria-hidden></div>
-              )}
-              <input
-                className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500 "
-                type="text"
-                placeholder="ชื่อผู้ใช้"
-                name="username"
-                onChange={handleChange}
-                value={values.username}
-                onBlur={handleBlur}
-              />
-              {errors.username && touched.username ? (
-                <p className="my-2 text-red-400">{errors.username}</p>
-              ) : (
-                <div className="h-10" aria-hidden></div>
-              )}
-              <input
-                className="w-full px-3 py-2 leading-tight text-gray-500 border rounded shadow appearance-none focus:border-pink-500 "
-                type="email"
-                placeholder="อีเมล"
-                name="email"
-                onChange={handleChange}
-                value={values.email}
-                onBlur={handleBlur}
-              />
-              {errors.email && touched.email ? (
-                <p className="my-2 text-red-400">{errors.email}</p>
               ) : (
                 <div className="h-10" aria-hidden></div>
               )}
