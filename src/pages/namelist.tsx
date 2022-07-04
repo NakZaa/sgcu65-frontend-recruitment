@@ -11,6 +11,7 @@ export async function getStaticProps() {
     props: {
       users,
     },
+    revalidate: 60, // In seconds
   };
 }
 type User = {
@@ -19,16 +20,22 @@ type User = {
   surname: string;
 };
 
-const Namelist = ({users,}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Namelist = ({
+  users,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [query, setQuery] = useState<string>("");
 
-  const filteredUsers = useMemo(() => users.filter(
-    (user: User) =>
-      query === "" ||
-      user.username.toUpperCase().includes(query.toUpperCase())  ||
-      user.name.toUpperCase().includes(query.toUpperCase()) ||
-      user.surname.toUpperCase().includes(query.toUpperCase())
-  ), [query, users]);
+  const filteredUsers = useMemo(
+    () =>
+      users.filter(
+        (user: User) =>
+          query === "" ||
+          user.username.toUpperCase().includes(query.toUpperCase()) ||
+          user.name.toUpperCase().includes(query.toUpperCase()) ||
+          user.surname.toUpperCase().includes(query.toUpperCase())
+      ),
+    [query, users]
+  );
 
   return (
     <div className="relative flex flex-col w-full min-h-screen ">
